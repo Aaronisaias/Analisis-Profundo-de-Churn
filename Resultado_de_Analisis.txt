@@ -1,0 +1,291 @@
+================================================================================
+RESULTADO DE ANÁLISIS - CHURN EN EMPRESA DE SUSCRIPCIÓN
+================================================================================
+Problema: "Estamos perdiendo dinero, pero no sé por qué. Hay clientes que se van
+(churn) y otros que se quedan… necesito entender qué está pasando."
+================================================================================
+
+--------------------------------------------------------------------------------
+PREGUNTA 1: ¿Cuál es la tasa general de churn? (porcentaje de clientes que se van)
+--------------------------------------------------------------------------------
+
+RESULTADO:
+   - Clientes que se fueron (Churn=1): 163 (54.3%)
+   - Clientes que se quedaron (Churn=0): 137 (45.7%)
+   - Total clientes: 300
+
+RESPUESTA PROFESIONAL:
+La tasa de churn es de 54.3%. Esto significa que MÁS DE LA MITAD de los clientes
+abandonan el servicio. En una empresa de suscripción, una tasa sana suele estar
+entre 2% y 8% mensual. Un 54% indica un problema grave de retención: por cada
+100 clientes, 54 se van. Esto explica directamente las pérdidas económicas del
+CEO: la base de clientes se erosiona rápidamente.
+
+
+--------------------------------------------------------------------------------
+PREGUNTA 2: ¿Qué plan (Básico, Estándar, Premium) tiene mayor tasa de abandono?
+--------------------------------------------------------------------------------
+
+RESULTADO:
+          clientes_total  clientes_churn  tasa_churn
+Plan                                                
+Premium               88              44        50.0
+Basico               124              69        55.6
+Estandar              88              50        56.8
+
+RESPUESTA PROFESIONAL:
+El plan ESTÁNDAR tiene la mayor tasa de churn (56.8%), seguido del Básico (55.6%)
+y el Premium (50.0%). El Premium retiene mejor a los clientes. La diferencia
+sugiere que los planes de mayor valor percibido generan mayor compromiso. Los
+planes Básico y Estándar pueden no estar entregando suficiente valor o tienen
+una oferta que no justifica quedarse frente a la competencia.
+
+
+--------------------------------------------------------------------------------
+PREGUNTA 3: ¿Qué región tiene más clientes que se van?
+--------------------------------------------------------------------------------
+
+RESULTADO:
+        clientes_total  clientes_churn  tasa_churn
+Region                                            
+Sur                 78              35        44.9
+Este                63              30        47.6
+Oeste               85              50        58.8
+Norte               74              48        64.9
+
+RESPUESTA PROFESIONAL:
+La región NORTE tiene la mayor tasa de churn (64.9%), seguida de Oeste (58.8%).
+Sur (44.9%) y Este (47.6%) retienen mejor. Esto sugiere problemas locales:
+posible competencia fuerte en Norte/Oeste, mala cobertura, servicio al cliente
+insuficiente en esas zonas, o diferencias culturales/demográficas. Es clave
+investigar qué ocurre específicamente en Norte para replicar lo que sí funciona
+en Sur y Este.
+
+
+--------------------------------------------------------------------------------
+PREGUNTA 4: ¿Los clientes que se van tienen menos meses activos que los que se quedan?
+--------------------------------------------------------------------------------
+
+RESULTADO:
+       promedio_meses  cantidad
+Churn                          
+0               18.48       137
+1               18.48       163
+
+RESPUESTA PROFESIONAL:
+NO. Ambos grupos tienen exactamente el mismo promedio de meses activos (18.48).
+Esto indica que el tiempo de antigüedad NO es un factor diferenciador en este
+dataset. Tanto clientes nuevos como veteranos abandonan por igual. El problema
+no está en una "prueba temprana" del servicio, sino en algo estructural que
+afecta a todos los niveles de antigüedad.
+
+
+--------------------------------------------------------------------------------
+PREGUNTA 5: ¿El uso de la app influye en el churn? (¿usan más o menos horas los que se van?)
+--------------------------------------------------------------------------------
+
+RESULTADO:
+       promedio_horas  cantidad
+Churn                          
+0               48.88       137
+1               53.39       163
+
+RESPUESTA PROFESIONAL:
+SÍ influye, pero de forma contraria a lo esperado. Los clientes que SE VAN usan
+la app MÁS horas (53.39) que los que se quedan (48.88). Una hipótesis: los
+usuarios intensivos pueden estar más expuestos a fallos, frustración por bugs,
+o sienten que "ya probaron todo" y buscan algo nuevo. Otra posibilidad: usan
+mucho porque tienen problemas y buscan alternativas mientras tanto. Hay que
+investigar la experiencia de los power users.
+
+
+--------------------------------------------------------------------------------
+PREGUNTA 6: ¿Los clientes que contactan más a soporte tienen mayor probabilidad de irse?
+--------------------------------------------------------------------------------
+
+RESULTADO:
+       promedio_contactos  cantidad
+Churn                              
+0                    4.47       137
+1                    4.58       163
+
+RESPUESTA PROFESIONAL:
+La diferencia es MÍNIMA (4.47 vs 4.58 contactos). No hay evidencia sólida de que
+contactar más a soporte esté directamente ligado al churn en estos datos. Sin
+embargo, un cliente que contacta muchas veces puede estar teniendo problemas
+recurrentes. Vale la pena revisar si hay un umbral (ej: más de 6 contactos) donde
+sí aumenta el riesgo, y mejorar la resolución en primera llamada.
+
+
+--------------------------------------------------------------------------------
+PREGUNTA 7: ¿La edad influye en el churn? (¿hay un rango de edad más propenso a irse?)
+--------------------------------------------------------------------------------
+
+RESULTADO:
+       edad_promedio  cantidad
+Churn                         
+0              41.99       137
+1              39.82       163
+
+RESPUESTA PROFESIONAL:
+SÍ. Los clientes que se van son en promedio más jóvenes (39.82 años) que los que
+se quedan (41.99 años). La diferencia de ~2 años puede parecer pequeña, pero
+indica tendencia: los clientes más jóvenes abandonan más. Posibles razones: mayor
+disposición a probar competidores, menos lealtad de marca, o que la oferta no
+encaja con las expectativas del público joven. La estrategia de retención debe
+pensarse especialmente para el rango 18-40 años.
+
+
+--------------------------------------------------------------------------------
+PREGUNTA 8: ¿Qué combinación Plan + Región tiene el mayor problema de churn?
+--------------------------------------------------------------------------------
+
+RESULTADO:
+                 total  churn  tasa
+Plan     Region                    
+Basico   Norte      31     23  74.2
+Estandar Norte      18     12  66.7
+         Oeste      27     18  66.7
+Premium  Oeste      27     15  55.6
+Basico   Oeste      31     17  54.8
+         Este       26     14  53.8
+Premium  Norte      25     13  52.0
+         Sur        16      8  50.0
+Estandar Este       17      8  47.1
+         Sur        26     12  46.2
+
+RESPUESTA PROFESIONAL:
+La combinación PLAN BÁSICO + REGIÓN NORTE tiene el peor desempeño: 74.2% de
+churn (23 de 31 clientes se van). Es el foco crítico. Le siguen Estándar+Norte
+(66.7%) y Estándar+Oeste (66.7%). La región Norte aparece en las peores
+combinaciones. La acción prioritaria debe ser: intervenir en Norte, especialmente
+para clientes de planes Básico y Estándar. Sur y Este mantienen tasas más bajas.
+
+
+--------------------------------------------------------------------------------
+PREGUNTA 9: ¿Por qué se van los clientes?
+--------------------------------------------------------------------------------
+
+RESPUESTA PROFESIONAL (Síntesis del análisis):
+
+Los clientes se van por una COMBINACIÓN de factores:
+
+1. REGIÓN NORTE: Es el factor más fuerte. Algo en Norte no funciona: competencia,
+   servicio, cobertura o percepción de valor. La tasa llega al 74% en Plan Básico.
+
+2. PLAN BAJO VALOR: Los planes Básico y Estándar retienen peor que Premium.
+   Posible falta de diferenciación o contenido que justifique quedarse.
+
+3. CLIENTES JÓVENES: Los menores de 40 años abandonan más. La oferta no está
+   conectando con el público más joven o la competencia los atrae más.
+
+4. USO INTENSIVO SIN SATISFACCIÓN: Quienes más usan la app también se van más.
+   Sugiere que el uso alto no se traduce en satisfacción; pueden existir bugs,
+   límites o sensación de "ya vi todo".
+
+5. PRECIO: El precio de $20/mes tiene la peor retención (57.5%). Puede ser un
+   punto "incómodo": ni barato ni premium, y el cliente no percibe valor por
+   lo que paga.
+
+En resumen: NO es un solo motivo. Es la suma de región (Norte), plan (Básico/
+Estándar), edad (jóvenes) y posible desconexión entre uso y satisfacción.
+
+
+--------------------------------------------------------------------------------
+PREGUNTA 10: ¿El precio del plan influye en la decisión de quedarse o irse?
+--------------------------------------------------------------------------------
+
+RESULTADO:
+                clientes_total  clientes_churn  tasa_churn
+Precio_Mensual                                            
+30                         100              51        51.0
+10                          94              51        54.3
+20                         106              61        57.5
+
+RESPUESTA PROFESIONAL:
+SÍ influye. Los planes de $20/mes tienen la peor retención (57.5%), seguidos
+de $10 (54.3%) y $30 (51.0%). Los clientes que pagan más ($30) se quedan más.
+Interpretación: el precio bajo ($10) puede atraer clientes poco comprometidos;
+el precio medio ($20) puede no transmitir suficiente valor; y el precio alto
+($30) atrae a quienes valoran más el servicio. La estrategia de precios debe
+revisarse: el tramo de $20 parece ser la "zona de riesgo" donde el valor
+percibido no justifica el costo.
+
+
+================================================================================
+CONCLUSIÓN FINAL Y AYUDA PARA TOMAR MEJOR DECISIÓN
+================================================================================
+
+--- RESUMEN DEL PROBLEMA ---
+La empresa pierde dinero porque más de la mitad de los clientes (54.3%) abandonan.
+No es un tema de "algunos" que se van: es una hemorragia constante de la base
+de clientes.
+
+--- QUÉ SOLUCIONAR (prioridad) ---
+
+1. URGENTE - Región Norte: Investigar y actuar. Crear plan específico para Norte:
+   mejora de servicio, promociones, atención prioritaria. La tasa del 74% en
+   Básico+Norte es insostenible.
+
+2. ALTO - Planes Básico y Estándar: Revisar la propuesta de valor. Añadir
+   contenido o beneficios que diferencien de la competencia. Considerar
+   migración incentivada a Premium.
+
+3. MEDIO - Clientes jóvenes (18-40 años): Campañas de engagement, contenido
+   dirigido, y programas de fidelización para este segmento.
+
+4. MEDIO - Precio $20: Replantear el plan de $20. O subir valor percibido o
+   ajustar precio para alinearlo con la expectativa del cliente.
+
+5. BAJO - Usuarios intensivos: Encuestas de satisfacción a quienes usan la app
+   muchas horas. Identificar pain points y mejorar la experiencia.
+
+--- QUÉ MEJORAR ---
+
+• Monitorear churn por región y plan en tiempo real.
+• Crear alertas tempranas: clientes que reducen uso o contactan mucho a soporte.
+• Ofrecer programas de retención (descuentos, contenido exclusivo) antes de que
+  el cliente decida irse.
+• Invertir en calidad de servicio en Norte y Oeste donde el churn es mayor.
+
+
+================================================================================
+COLUMNAS PARA POWER BI - VISUALIZACIÓN
+================================================================================
+
+Para armar dashboards que reflejen el problema de churn, incluir:
+
+--- TABLA PRINCIPAL (del CSV) ---
+• Cliente_ID
+• Edad
+• Region
+• Plan
+• Precio_Mensual
+• Meses_Activo
+• Uso_App_Horas
+• Soporte_Contactos
+• Churn
+
+--- MÉTRICAS CALCULADAS ---
+• Tasa_Churn = (Clientes con Churn=1 / Total clientes) * 100
+• Churn_Plan = Agrupar por Plan, calcular % churn
+• Churn_Region = Agrupar por Region, calcular % churn
+• Churn_Plan_Region = Agrupar por Plan + Region, calcular % churn
+
+--- GRÁFICOS RECOMENDADOS ---
+1. Donut o Pie: Distribución Churn vs No Churn (54% vs 46%)
+2. Barras horizontales: Tasa churn por Región (ordenar de mayor a menor)
+3. Barras: Tasa churn por Plan (Básico, Estándar, Premium)
+4. Matriz: Plan (filas) x Región (columnas), valor = % churn (para ver Norte+Básico)
+5. Barras: Tasa churn por Precio_Mensual ($10, $20, $30)
+6. Gráfico de dispersión: Uso_App_Horas vs Soporte_Contactos, colorear por Churn
+7. KPI: Total clientes, % Churn, Clientes que se fueron
+
+--- SLICERS (filtros) ---
+• Region
+• Plan
+• Rango de Edad (crear columna: 18-30, 31-45, 46-64)
+
+================================================================================
+FIN DEL DOCUMENTO
+================================================================================
