@@ -1,129 +1,189 @@
-# 📊 Análisis de Churn (Pérdida de Clientes)
+# 📊 Análisis de Churn de Clientes
 
-## 🧠 Descripción del Proyecto
-
-Este proyecto tiene como objetivo analizar en profundidad el fenómeno de **churn (abandono de clientes)** para identificar patrones, causas y oportunidades de mejora en la retención.
-
-A través del análisis de datos, se busca responder una pregunta clave:
-
-> ¿Por qué los clientes se van y cómo podemos evitarlo?
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![ETL](https://img.shields.io/badge/ETL-Data%20Pipeline-blue?style=for-the-badge)
 
 ---
 
-## 🎯 Objetivos
+# 📖 Descripción
 
-- Identificar los factores que más influyen en el churn
-- Detectar patrones de comportamiento en clientes que abandonan
-- Analizar variables críticas como uso, antigüedad, soporte y plan contratado
-- Proponer insights accionables basados en datos
+La pérdida de clientes (**Customer Churn**) representa uno de los principales desafíos para cualquier empresa basada en suscripciones o servicios.
 
----
+Este proyecto desarrolla un análisis integral de datos para identificar los factores que influyen en el abandono de clientes, utilizando técnicas de limpieza, transformación, exploración y visualización de datos.
 
-## 🛠️ Tecnologías Utilizadas
-
-- 🐍 Python (Pandas)
-- 📊 Power BI (visualización de datos)
-- 🤖 Inteligencia Artificial aplicada al análisis de datos
-- 💻 IDE: Cursor
-- 🔧 Git & GitHub
+El objetivo es convertir información histórica en conocimiento accionable que permita diseñar estrategias orientadas a mejorar la retención y aumentar la rentabilidad del negocio.
 
 ---
 
-## 🧪 Metodología de Análisis
+# 🎯 Problema de Negocio
 
-### 1. Limpieza de Datos
-- Eliminación de valores nulos
-- Normalización de variables
-- Validación de tipos de datos
+Cada cliente que abandona un servicio representa una pérdida de ingresos y un aumento en los costos de adquisición de nuevos clientes.
 
-### 2. Transformación
-- Creación de métricas clave (ej: tasa de churn)
-- Segmentación por rangos (`pd.cut`)
-- Agrupaciones estratégicas (`groupby`)
+Este proyecto responde preguntas fundamentales para la toma de decisiones:
 
-### 3. Análisis Exploratorio (EDA)
-- Comparación de churn por:
-  - Plan
-  - Región
-  - Uso de la aplicación
-  - Meses activo
-  - Contacto con soporte
-
-### 4. Visualización
-- Creación de dashboards en Power BI
-- Identificación de patrones visuales claros
+- ¿Qué características tienen los clientes que abandonan el servicio?
+- ¿Qué variables presentan mayor relación con el churn?
+- ¿Qué segmentos poseen mayor riesgo de cancelación?
+- ¿Qué acciones podrían reducir la pérdida de clientes?
 
 ---
 
-## 📊 Principales Hallazgos
+# 🎯 Objetivos
 
-El análisis reveló patrones críticos:
-
-- ❌ Los clientes con **bajo uso de la app** tienen mayor churn
-- ❌ Los clientes con **menos meses activos** abandonan más rápido
-- ❌ Mayor número de **contactos con soporte** se asocia a mayor churn
-- ❌ Algunos planes presentan mayor tasa de abandono
-
-### 🔍 Insight clave:
-
-> El churn no es aleatorio. Está directamente relacionado con el comportamiento del usuario y su experiencia con el servicio.
+- Analizar el comportamiento de los clientes.
+- Identificar patrones asociados al abandono.
+- Detectar variables críticas mediante análisis exploratorio.
+- Generar información útil para apoyar decisiones estratégicas.
+- Proponer recomendaciones orientadas a mejorar la retención.
 
 ---
 
-## 📈 Visualizaciones (Power BI)
+# 🛠 Tecnologías Utilizadas
 
-### 📌 Gráfico 1
-
-_Captura del dashboard_
-
-![Grafico 1](Visual1.png)
-
----
-
-### 📌 Gráfico 2
-
-_Segunda captura_
-
-![Grafico 2](Visual2.png)
+| Categoría | Tecnologías |
+|-----------|-------------|
+| Lenguaje | Python |
+| Librerías | Pandas |
+| Base de Datos | SQL Server |
+| Visualización | Power BI |
+| IA | Inteligencia Artificial aplicada al análisis |
+| IDE | Cursor |
+| Control de versiones | Git · GitHub |
 
 ---
 
-## 🤖 Uso de Inteligencia Artificial
+# ⚙️ Metodología de Trabajo
 
-En este proyecto se aplicó IA de forma estratégica para:
+## 1. Limpieza de Datos
 
-- Optimizar el análisis exploratorio
-- Detectar patrones ocultos en los datos
-- Automatizar procesos de limpieza y transformación
-- Acelerar la toma de decisiones basada en datos
-
----
-
-## 🚀 Valor del Proyecto
-
-Este análisis permite:
-
-- Comprender el comportamiento real de los clientes
-- Detectar problemas en la experiencia del usuario
-- Reducir la pérdida de clientes (churn)
-- Mejorar la rentabilidad del negocio
+- Eliminación de valores nulos.
+- Corrección de inconsistencias.
+- Validación de tipos de datos.
+- Normalización de variables.
 
 ---
 
-## 📌 Conclusión
+## 2. Transformación de Datos
 
-El churn es un problema crítico pero **predecible**.
-
-Mediante el uso de análisis de datos, es posible:
-
-- anticipar la pérdida de clientes  
-- identificar factores de riesgo  
-- tomar decisiones estratégicas  
-
-Este proyecto demuestra cómo el análisis de datos puede transformar información en **ventaja competitiva real**.
+- Construcción de métricas.
+- Segmentación de clientes.
+- Agrupación de información.
+- Preparación de datos para el análisis.
 
 ---
 
-## 👨‍💻 Autor
+## 3. Análisis Exploratorio (EDA)
 
-**Aaron isaias Medina**
+Se analizaron variables relacionadas con:
+
+- Tipo de plan.
+- Región.
+- Tiempo como cliente.
+- Uso de la aplicación.
+- Interacciones con soporte.
+- Comportamiento de cancelación.
+
+---
+
+## 4. Visualización
+
+Se desarrollaron dashboards interactivos en Power BI para facilitar la interpretación de los resultados y apoyar la toma de decisiones.
+
+---
+
+# 📊 Principales Hallazgos
+
+El análisis permitió identificar patrones relevantes:
+
+- Los clientes con menor uso de la aplicación presentan mayor probabilidad de abandono.
+- Los clientes con menor antigüedad muestran una mayor tasa de churn.
+- Un mayor número de contactos con soporte técnico se relaciona con una mayor probabilidad de cancelación.
+- Determinados planes concentran una proporción superior de clientes perdidos.
+
+---
+
+# 💡 Insight Principal
+
+> El abandono de clientes no ocurre de forma aleatoria; responde a patrones de comportamiento que pueden identificarse mediante análisis de datos y utilizarse para diseñar estrategias de retención.
+
+---
+
+# 📈 Dashboard
+
+## Vista General
+
+![Dashboard](Visual1.png)
+
+---
+
+## Análisis Complementario
+
+![Dashboard](Visual2.png)
+
+---
+
+# 🤖 Aplicación de Inteligencia Artificial
+
+Durante el desarrollo del proyecto se utilizó Inteligencia Artificial como herramienta de apoyo para:
+
+- Optimizar el análisis exploratorio.
+- Detectar patrones relevantes.
+- Mejorar la productividad durante el desarrollo.
+- Validar hipótesis analíticas.
+- Documentar el proyecto.
+
+---
+
+# 💼 Valor para el Negocio
+
+Este análisis permite a la organización:
+
+- Reducir la pérdida de clientes.
+- Mejorar la fidelización.
+- Identificar segmentos de alto riesgo.
+- Optimizar estrategias comerciales.
+- Incrementar la rentabilidad mediante decisiones basadas en datos.
+
+---
+
+# 📂 Estructura del Proyecto
+
+```text
+Analisis-de-Churn/
+
+│── data/
+│── notebooks/
+│── dashboard/
+│── Visual1.png
+│── Visual2.png
+│── README.md
+```
+
+---
+
+# 🚀 Próximas Mejoras
+
+- Implementar un modelo predictivo de churn mediante Machine Learning.
+- Automatizar el pipeline de análisis.
+- Integrar nuevas fuentes de datos.
+- Incorporar métricas avanzadas de retención.
+- Publicar dashboards interactivos.
+
+---
+
+# 📌 Conclusión
+
+El análisis demuestra que el abandono de clientes puede comprenderse mediante técnicas de análisis de datos y convertirse en una oportunidad para mejorar la estrategia del negocio.
+
+La combinación de Python, SQL Server y Power BI permitió transformar datos en información estratégica para apoyar la toma de decisiones y generar valor para la organización.
+
+---
+
+# 👨‍💻 Autor
+
+**Aaron Isaías Medina**
+
+**Analista de Datos | SQL | Python | ETL | Power BI**
